@@ -4,9 +4,21 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import { User } from "./models/User.model";
+
+@Component
+export default class App extends Vue {
+  created() {
+    console.log(User["__AUTOMAPPER_METADATA_FACTORY__"].toString());
+  }
+}
+</script>
 
 <style>
 #app {
